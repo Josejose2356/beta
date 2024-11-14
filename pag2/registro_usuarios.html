@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <section class="form_register">
+        <h4> Formulario de Registro</h4>
+        <form action="registro_usuario.php" method="POST">
+            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre" required>
+            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido" required>
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Correo electronico" required>
+            <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña" required>
+            <p>Estoy de acuerdo con <a href="#">Términos y condiciones</a></p>
+            <input class="botons" type="submit" value="Registrar">
+        </form>
+        <p><a href="#">Iniciar Sesion </a></p>
+    </section>
+</body>
+</html>

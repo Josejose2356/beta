@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    margin-left: 80px;
+    margin-top: 80px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+main{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: rgb(215, 213, 213);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+.iconMenu{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+    background: none;
+
+}
+.iconMenu i{
+    font-size: 20px;
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+}
+.menuSlider{
+    width: 80px;
+    height: 100%;
+    background: #e87d30;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #e87d30;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menuSlider::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menuSlider{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.nombrePagina{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+}
+.nombrePagina i{
+    width: 20px;
+    margin-right: 20px;
+
+}
+.optionMenu{
+    padding: 5px 30px;
+    position: absolute;
+    top: 80px;
+
+}
+.optionMenu a{
+    color: azure;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 30ms;
+
+}
+.optionMenu a:hover{
+    color: black;
+}
+.optionMenu .option{
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.optionMenu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.optionMenu .option h4{
+    font-weight: 300;
+    
+    cursor: pointer;
+}
+a.selected{
+    color: white;
+}
+.selected::before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+
+}
+
+
+/*clase js*/
+.body_move{
+    margin-left: 250px;
+
+}
+.menuSlide_move{
+    width: 250px;
+}
+/*formulario solicitud OM*/
+.container form {
+    display: flex; /* Hace que las secciones estén en fila */
+    flex-wrap: wrap; /* Permite que las secciones bajen si no caben */
+    justify-content: space-between; /* Espacia los elementos de manera uniforme */
+    gap: 20px; /* Espaciado entre las secciones */
+}
+
+section {
+    flex: 1 1 calc(50% - 20px); /* Ocupa la mitad del ancho con un margen ajustado */
+    border-radius: 5px;
+    box-shadow: 1px 0 4px rgb(0, 0, 0);
+    margin-bottom: 15px;
+    padding: 15px;
+    box-sizing: border-box; /* Asegura que el padding y el borde no alteren el tamaño */
+}
+
+article {
+    flex: 1 1 calc(50% - 20px); /* Ajusta los elementos internos de las secciones */
+    margin-bottom: 15px;
+}
+
+aside {
+    margin-left: auto; /* Empuja el aside hacia la derecha */
+    text-align: right; /* Alinea el contenido dentro del aside */
+}
+
+aside input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+aside input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.form-group input {
+    width: calc(100% - 10px);
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-width:2px;
+    padding-left: 15px;
+    margin-left: 10px;
+    transition: all 300ms ease;
+}
+
+
+.form-group-text {
+    margin-bottom: 15px;
+}
+
+.form-group-text textarea {
+    width: calc(100% - 20px);
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-width:2px;
+    padding: 10px;
+    
+}
+
+form span{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-group-radio label {
+    margin-right: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+.contenedorImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.resize-image {
+    width: 600px; /* Cambia el tamaño según tus necesidades */
+    height: 300; /* Mantiene la proporción de la imagen */
+    margin-bottom: 15px; /* Espacio entre las imágenes */
+    border-radius: 5px;
+    border: 1px solid rgb(140, 136, 136);
+    
+}
+
+
+
+/*elemtos resposivos*/
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+
+    .menuSlide_move{
+        width: 80px;
+        left: -80px;
+    }
+    
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Lateral responsive</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    <header>
+        <div class="iconMenu">
+            <!--<img src="./imagenes/menu.png" alt="menu" id="btn_open">-->
+            
+            <i class="fa-solid fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+    
+    <div class="menuSlider" id="menu_side">
+        <div class="nombrePagina" >
+            <!--<img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/work.png" style="color: none;" alt="work"/>-->
+            <i class="fas fa-industry"></i>
+            <h4>Registro OM</h4>
+        </div>
+        <div class="optionMenu">
+            <a href="#" id="link-inicio" class="selected">
+                <div class="option">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="#" id="link-portafolio">
+                <div class="option">
+                    <i class="fa-solid fa-file-circle-plus" title="nuevodoc"></i> 
+                    
+                    <h4>Crear OM</h4>
+                </div>
+            </a>
+            <a href="#" id="link-cursos">
+                <div class="option">
+                    <i class="fa-solid fa-magnifying-glass" title="buscar"></i>
+                    <h4>Buscar OM</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <i class="fas fa-clipboard-list" title="autorizacion"></i>
+                    <h4>Autorizacion</h4>
+                </div>
+
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-person-digging" title="tipoTrab"></i>
+                        <h4>Tipo de Trabajo</h4>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="option">
+                        <i class="fas fa-hard-hat" title="contacto2"></i>
+                        <h4>Detalle Mano Obra</h4>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-screwdriver-wrench" title="detalleRep"></i>
+                        <h4>Detalle Repuestos</h4>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-certificate" title="certificar"></i>
+                        <h4>Certificacion</h4>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-file-pdf" title="docPdf"></i>
+                        <h4>Crear PDF</h4>
+                    </div>
+                </a>
+
+                <a href="Pagina de salida" onclick="window.close();">
+                    <div class="option">
+                        <i class="fa-solid fa-power-off" title="salir"></i>
+                        <h4>Salir</h4>
+                    </div>
+                </a>
+            </a>
+        </div>
+
+    </div>
+    <main id="main-inicio">
+        <h1>Pasos de Registro OM</h1><br>
+        <p>Primeramente El Usuario (Técnico de Mantenimiento, Operario, Jefe de Mantenimiento, Jefe de Producción) solicita una Orden de Mantenimiento, En el cual se Registran Nombre, Planta, Ubicacion, equipo a ser reparado y el detalle de la falla.</p> <br>
+
+        <p>Inmediatamente el Tecnico encargado evaluara la falla, y dara parte al Jefe de Mantenimiento para que este pueda organizar la intervencion con consulta a produccion y crear una Orden de Mantenimiento. para ello se debe registrar las actividades a realizar con referencia a la Solicitud, estas se especifican en el lado izquierdo de la pagina. </p> <br/>
+        <div class="contenedorImg">
+            <img src="./img/mantto1.jpg" alt="mantto1" class="resize-image" >
+            <img src="./img/mantto2.jpg" alt="mantto2" class="resize-image">
+        </div>
+
+    </main>
+
+    <main id="main-portafolio" style="display:none;">
+        <fieldset>
+            <legend>Datos de la Solicitud</legend>
+            <div class="container">
+                <form action="insertar_solicitud.php" method="post">
+                    <section>
+                        <article>
+                            <div class="form-group">
+                                <span>Fecha y hora:</span>
+                                <input type="datetime-local" name="fecha_hora" placeholder="Ingrese fecha" required>
+                            </div>
+                            <div class="form-group">
+                                <span>Nombre del Solicitante</span>
+                                <input type="text" name="nombre_solicitante" placeholder="Ingrese Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <span>Planta</span>
+                                <input type="text" name="planta" placeholder="Ingrese Planta" required>
+                            </div>
+                            <div class="form-group">
+                                <span>Ubicacion</span>
+                                <input type="text" name="ubicacion" placeholder="Ingrese Ubicacion" required>
+                            </div>
+                            <div class="form-group">
+                                <span>Equipo</span>
+                                <input type="text" name="equipo" placeholder="Ingrese Equipo" required>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="form-group-radio">
+                                <span>Prioridad</span><br />
+                                <input type="radio" id="prioridadAlta" name="prioridad" value="Alta">
+                                <label for="prioridadAlta">Alta</label><br />
+                                <input type="radio" id="prioridadBaja" name="prioridad" value="Baja">
+                                <label for="prioridadBaja">Baja</label><br />
+                            </div>
+                        </article>
+                        <article>
+                            <div class="form-group-radio">
+                                <span>Tipo de Mantenimiento</span><br />
+                                <input type="radio" id="tipoPreventivo" name="tipo_mantenimiento" value="Preventivo">
+                                <label for="tipoPreventivo">Preventivo</label><br />
+                                <input type="radio" id="tipoCorrectivo" name="tipo_mantenimiento" value="Correctivo">
+                                <label for="tipoCorrectivo">Correctivo</label><br />
+                            </div>
+                        </article>
+                    </section>
+                    <section>
+                        <article>
+                            <div class="form-group-text">
+                                <span>Descripcion detallada del servicio</span>
+                                <textarea name="descripcion_servicio" rows="5" placeholder="Escriba el servicio que requiere"></textarea>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="form-group-text">
+                                <span>Nota del Operario para el Tecnico</span>
+                                <textarea name="nota_operario" rows="5" placeholder="Escriba nota relevante"></textarea>
+                            </div>
+                        </article>
+                        <aside>
+                            <input type="submit" value="Registrar Solicitud">
+                        </aside>
+                    </section>
+                </form>
+                
+            </div>
+        </fieldset><br/>
+    </main>
+
+    <main id="main-cursos" style="display:none;">
+        <h1>Buscar Orden de Mantenimiento</h1><br>
+        <p>En esta parte se debe Buscar La orden de Mantenimiento Creada</p> <br>
+
+        <p>N° de OM</p>
+    </main>
+    
+
+    <script src="./js/script.js"></script>
+    
+</body>
+</html>

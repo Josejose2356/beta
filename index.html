@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header_superior">
+            <div class="logo">
+                <img src="./img/logo.png" alt="imagen">
+            </div>
+            <div class="search">
+                <input type="search" placeholder="¿Que deseas buscar?">
+            </div>
+        </div>
+        <div class="container_menu">
+            
+            <div class="menu">
+                <input type="checkbox" id="check_menu">
+                <label for="check_menu" id="label_check">
+                    <i class="fa-solid fa-bars icon_menu"></i>
+                </label>
+                <nav>
+                    <ul>
+                        <li><a href="#" id="selected"></a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Servicios</a>
+                            <ul>
+                                <li><a href="./pag2/registro_usuarios.html">Registro Usuarios</a></li>
+                                <li><a href="./pag1/orden_matenimiento.html">Orden Mantenimiento</a></li>
+                                <li><a href="./pag3/indicadores.html">Indices KPI</a></li>
+                                <li><a href="./pag4/repuestos.html">Repuestos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contactos</a></li>
+                        <li><a href="#"> blog</a></li>
+                        <li><a href="#">otros</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <article>
+            <h2></h2>
+            <div class="contenedor">
+                <div class="grupo_radio">
+                    <div class="radio_input">
+                        <input type="radio" id="registro_usuarios" name="item_seleccionado" value="registro_usuarios" onclick="redirigir()">
+                        <div class="radio_imagen">
+                            <i class="fa-solid fa-users-rectangle"></i>
+                            <label for="registro_usuarios">Registro Usuarios</label>   
+                        </div>
+                    </div>
+        
+                    <div class="radio_input">
+                        <input type="radio" id="Orden_matenimiento" name="item_seleccionado" value="Orden_matenimiento" onclick="redirigir()">
+                        <div class="radio_imagen">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <label for="Orden_matenimiento">Orden de Mantenimiento</label>   
+                        </div>
+                    </div>
+        
+                    <div class="radio_input">
+                        <input type="radio" id="indicadores" name="item_seleccionado" value="indicadores" onclick="redirigir()">
+                        <div class="radio_imagen">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <label for="indicadores">Indicadores KPI</label>   
+                        </div>
+                    </div>
+        
+                    <div class="radio_input">
+                        <input type="radio" id="repuestos" name="item_seleccionado" value="repuestos" onclick="redirigir()">
+                        <div class="radio_imagen">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <label for="repuestos">Repuestos</label>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

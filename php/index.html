@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Dinámico</title>
+    <style type="text/css">
+        .seleccion {
+            border: 3px solid #58ACFA;
+            background-color: #2ECCFA;
+            color: white;
+            font-size: 17px;
+            width: 150px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <form name="formulario1" action="#">
+        <!-- Select de Departamentos cargado dinámicamente desde PHP -->
+        <select class="seleccion" name="cosa" onchange="cambia()" id="departamento">
+            <option value="0">Seleccione</option>
+            <?php
+			include('conexion.php');
+			$db = new CodeaDB();
+			$departamentos = $db->buscar("departamentos", "1=1");
+			foreach ($departamentos as $dep) {
+    		echo "<option value='{$dep['id_dep']}'>{$dep['nomb_dep']}</option>";
+			}
+			?>
+
+        </select>
+
+        <!-- Select de Provincias que se llenará dinámicamente con JavaScript -->
+        <select class="seleccion" name="opt" id="provincia">
+            <option value="-">-</option>
+        </select>
+    </form>
+
+    <script type="text/javascript">
+        // Función para cargar provincias usando fetch
+        function cambia() {
+            let departamentoId = document.getElementById("departamento").value;
+            if (departamentoId !== "0") {
+                fetch(`provincias.php?id_dep=${departamentoId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const provinciaSelect = document.getElementById("provincia");
+                        provinciaSelect.innerHTML = '<option value="-">-</option>';
+                        data.forEach(provincia => {
+                            let option = document.createElement("option");
+                            option.value = provincia.id_pro;
+                            option.text = provincia.nomb_pro;
+                            provinciaSelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error("Error:", error));
+            } else {
+                document.getElementById("provincia").innerHTML = '<option value="-">-</option>';
+            }
+        }
+    </script>
+</body>
+</html>
